@@ -1,9 +1,9 @@
 /* eslint-disable no-case-declarations */
 import React, { useState, useReducer } from "react";
-import { View, Text, KeyboardAvoidingView, Button, TouchableOpacity } from "react-native";
+import { View, Text, KeyboardAvoidingView, Button, TouchableOpacity, ImageBackground } from "react-native";
 import { InputComponent} from "../../components";
 import { colors } from "../../constants/colors.constants";
-import { signInFromApi, signUpFromApi } from "../../store/auth.slice";
+import { signInFromApi, signUpFromApi } from "../../store/slices/auth.slice";
 import { useAppDispatch } from "../../store/hooks";
 import { onInputChange,  UPDATED_FORM } from "../../utils/forms";
 import { isIOS } from "../../utils/platform-type";
@@ -32,6 +32,7 @@ const AuthScreen = () => {
   };
 
   return (
+    <ImageBackground source={require('../../../assets/background-auth.png')} resizeMode="cover" blurRadius={5} style={styles.background}>
     <KeyboardAvoidingView style={styles.containerKeyboard} behavior={isIOS ? "padding" : "height"}>
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
@@ -70,7 +71,8 @@ const AuthScreen = () => {
             <Text style={styles.promptMessage}>{message}</Text>
           </TouchableOpacity>
       </View>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+      </ImageBackground>
   );
 };
 

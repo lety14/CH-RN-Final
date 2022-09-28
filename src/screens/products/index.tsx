@@ -4,7 +4,7 @@ import { FlatList, View } from "react-native";
 import { FadeIn, CardProduct } from "../../components";
 import { RootStackParamList } from "../../navigation/offerts";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { filteredProducts, selectProduct } from "../../store/products.slice";
+import { filteredProducts, selectProduct } from "../../store/slices/products.slice";
 import IProduct from "../../types/IProduct.type";
 import { styles } from "./styles";
 
@@ -21,20 +21,18 @@ const Products = ({ navigation, route }: ProductsProps) => {
   }, []);
 
   const renderItem = ({ item, index }: { item: IProduct; index: number }): JSX.Element => (
-    <FadeIn delay={200 * index}>
-      <View style={styles.item}>
-        <CardProduct
-          item={item}
-          onSelected={() => {
-            dispatch(selectProduct(item));
-            navigation.navigate("Product", {
-              productId: item.id,
-              name: item.title,
-            });
-          }}
-        />
-      </View>
-    </FadeIn>
+    <View style={styles.item}>
+      <CardProduct
+        item={item}
+        onSelected={() => {
+          dispatch(selectProduct(item));
+          navigation.navigate("Product", {
+            productId: item.id,
+            name: item.title,
+          });
+        }}
+      />
+    </View>
   );
   const keyExtractor = (product: IProduct, index: number) => product.id.toString();
 
