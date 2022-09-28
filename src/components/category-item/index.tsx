@@ -10,10 +10,15 @@ type CategoryItemProps = {
 
 const CategoryItem = ({ item, onSelected }: CategoryItemProps): JSX.Element => {
   return (
+    <View style={styles.container}>
       <TouchableOpacity style={{ ...styles.containerTouchable }} onPress={onSelected}>
-          <Image source={item?.image} style={styles.icon} />
+        <Image source={item?.image} style={styles.icon} />
+        <View style={styles.details}>
           <Text style={styles.name}>{item.title}</Text>
+          <Text style={styles.description}>{item.description}</Text>
+        </View>
       </TouchableOpacity>
+    </View>
   );
 };
 
