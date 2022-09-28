@@ -1,6 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { LinearGradient } from "expo-linear-gradient";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { ButtonWithConfirmation, FadeIn } from "../../components";
 import { RootStackParamList } from "../../navigation/offerts";
@@ -9,6 +9,8 @@ import { styles } from "./styles";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { colors } from "../../constants/colors.constants";
 import { addItem } from "../../store/slices/cart.slice";
+import MapPreview from "../../components/map-preview";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type ProductProps = NativeStackScreenProps<RootStackParamList, "Product">;
 
@@ -22,8 +24,10 @@ const Product = ({ navigation, route }: ProductProps) => {
     }
   };
 
+  console.log(product?.coords);
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
         {product && (
           <TouchableOpacity
@@ -58,16 +62,23 @@ const Product = ({ navigation, route }: ProductProps) => {
         <FadeIn delay={600}>
           <Text style={styles.detail}>Region: {product?.region}</Text>
         </FadeIn>
+        <FadeIn delay={800}>
+          <View style={styles.map}>
+            <MapPreview location={product?.coords} zoom={12} />
+          </View>
+        </FadeIn>
       </ScrollView>
       <View style={styles.sectionBuy}>
         <Text style={styles.price}>$ {product?.price?.toFixed(2)}</Text>
         <ButtonWithConfirmation
-          text="Agregar al carrito"
-          textSuccess="Se agrego al carrito"
+          text="Agregar"
+          icon="add-circle-outline"
+          textSuccess="Agregado"
+          iconSuccess="checkmark-circle-outline"
           onHandleClick={onHandleAddToCart}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

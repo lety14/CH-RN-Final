@@ -4,3 +4,7 @@ export { default as Product } from "./product";
 export { default as UserProfile } from "./user-profile";
 export { default as Cart } from "./cart";
 export { default as Orders } from "./orders";
+export { default as Maps } from "./maps";
+export { default as NewPlaces } from "./new-places";
+export { default as PlaceDetails } from "./place-detail";
+export { default as PlaceList } from "./place-list";

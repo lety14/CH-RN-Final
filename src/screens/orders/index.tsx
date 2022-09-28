@@ -8,6 +8,8 @@ import { styles } from "./styles";
 
 const Orders = () => {
   const orders = useAppSelector((state) => state.orders.orders);
+  const userId = useAppSelector((state) => state.auth.userId);
+
   const dispatch = useAppDispatch();
 
   console.log(orders);
@@ -17,8 +19,10 @@ const Orders = () => {
   };
 
   useEffect(() => {
-    dispatch(getOrdersFromApi());
-  }, []);
+    if (userId) {
+      dispatch(getOrdersFromApi());
+    }
+  }, [userId]);
 
   const renderItem = ({ item, index }: { item: IOrder; index: number }): JSX.Element => (
     <View style={styles.item}>

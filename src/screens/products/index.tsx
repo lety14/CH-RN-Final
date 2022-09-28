@@ -1,7 +1,9 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect } from "react";
 import { FlatList, View } from "react-native";
-import { FadeIn, CardProduct } from "../../components";
+import { CardProduct } from "../../components";
+import { colors } from "../../constants/colors.constants";
 import { RootStackParamList } from "../../navigation/offerts";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { filteredProducts, selectProduct } from "../../store/slices/products.slice";
@@ -37,9 +39,9 @@ const Products = ({ navigation, route }: ProductsProps) => {
   const keyExtractor = (product: IProduct, index: number) => product.id.toString();
 
   return (
-    <View style={styles.container}>
+    <LinearGradient style={styles.container} colors={[colors.primary, "#ffffff"]}>
       <FlatList data={productsFiltered} renderItem={renderItem} keyExtractor={keyExtractor} />
-    </View>
+    </LinearGradient>
   );
 };
 

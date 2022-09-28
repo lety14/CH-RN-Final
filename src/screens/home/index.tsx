@@ -1,13 +1,14 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
 import { FlatList, Image, Text, View } from "react-native";
-import { CategoryItem } from "../../components";
+import { CategoryItem, FadeIn } from "../../components";
 import { RootStackParamList } from "../../navigation/offerts";
 import { selectCategory } from "../../store/slices/categories.slice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import ICategory from "../../types/ICategory.type";
 import { styles } from "./styles";
 import { LinearGradient } from "expo-linear-gradient";
+import { colors } from "../../constants/colors.constants";
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, "Home">;
 
@@ -34,20 +35,29 @@ const Home = ({ navigation }: HomeProps) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={require("../../../assets/home-categories.png")} style={styles.image} />
-        <LinearGradient
-          colors={["transparent", "rgba(0,0,0,0.5)"]}
-          locations={[0.6, 0.8]}
-          style={styles.background}
+      <LinearGradient style={styles.details} colors={[colors.primary, "#ffffff"]}>
+        <Image
+          source={require("../../../assets/bakground/Frame-3.png")}
+          style={styles.imageFrame3}
         />
-        <View style={styles.brandContainer}>
-          <Text style={styles.brand}>ADVENTURE</Text>
-          <Text style={styles.subtitle}>Encontrá tu destino ideal</Text>
-        </View>
-      </View>
 
-      <LinearGradient style={styles.details} colors={["#f5f5f5", "#ffffff"]}>
+        <Image
+          source={require("../../../assets/bakground/Frame-3.png")}
+          style={styles.imageFrame5}
+        />
+
+        <Image
+          source={require("../../../assets/bakground/Frame-2.png")}
+          style={styles.imageFrame2}
+        />
+
+        <Image source={require("../../../assets/bakground/Frame.png")} style={styles.imageFrame4} />
+
+        <Image
+          source={require("../../../assets/bakground/Frame-1.png")}
+          style={styles.imageFrame1}
+        />
+
         <Text style={styles.title}>Categorias</Text>
         <FlatList
           style={styles.grid}

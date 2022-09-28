@@ -5,13 +5,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.white,
-    padding: 20,
+    paddingHorizontal: 20,
   },
   title: {
     alignSelf: "flex-start",
     fontFamily: "monserrat-bold",
     fontSize: 25,
-    paddingVertical: 10,
+    paddingVertical: 20,
   },
   subtitle: {
     fontFamily: "monserrat-regular",

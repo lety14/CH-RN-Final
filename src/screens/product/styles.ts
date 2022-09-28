@@ -4,7 +4,7 @@ import { colors } from "../../constants/colors.constants";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     alignItems: "center",
   },
   imageContainer: {
@@ -59,9 +59,9 @@ export const styles = StyleSheet.create({
     paddingTop: 8,
   },
   sectionBuy: {
-    padding: 15,
+    marginBottom: -20,
+    paddingTop: 15,
     paddingHorizontal: 20,
-    borderRadius: 15,
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
@@ -69,10 +69,15 @@ export const styles = StyleSheet.create({
     borderTopColor: colors.black,
     borderTopWidth: 1,
   },
+  map: {
+    paddingTop: 30,
+    height: 200,
+    width: "100%",
+  },
   buttonReturn: {
     position: "absolute",
     padding: 7,
-    backgroundColor: colors.colorAlt1,
+    backgroundColor: colors.secondary,
     borderRadius: 10,
     top: 10,
     left: 10,
