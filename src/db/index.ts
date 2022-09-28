@@ -8,7 +8,7 @@ export const init = () => {
   const promise = new Promise<void>((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        "CREATE TABLE IF NOT EXISTS places(id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, image TEXT NOT NULL, address TEXT NOT NULL, coords TEXT NOT NULL);",
+        "CREATE TABLE IF NOT EXISTS places(id INTEGER PRIMARY KEY NOT NULL, title TEXT NOT NULL, description TEXT NOT NULL, image TEXT NOT NULL, address TEXT NOT NULL, coords TEXT NOT NULL);",
         [],
         () => resolve(),
         (_, err): boolean | any => reject(err)
@@ -18,12 +18,18 @@ export const init = () => {
   return promise;
 };
 
-export const insertPlace = (title: string, image: string, address: string, coords: ILocation) => {
+export const insertPlace = (
+  title: string,
+  description: string,
+  image: string,
+  address: string,
+  coords: ILocation
+) => {
   const promise = new Promise<any>((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        "INSERT INTO places(title, image, address, coords) VALUES(?,?,?,?);",
-        [title, image, address, JSON.stringify(coords)],
+        "INSERT INTO places(title, description, image, address, coords) VALUES(?,?,?,?,?);",
+        [title, description, image, address, JSON.stringify(coords)],
         (_, result) => resolve(result),
         (_, err): boolean | any => reject(err)
       );
