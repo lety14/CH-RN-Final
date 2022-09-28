@@ -8,7 +8,6 @@ export const PRODUCTS = [
     pack: "7 días. Comida y alojamiento incluidos",
     country: "Argentina",
     region: "Mendoza",
-    // quantity: 1,
     coords: {
       lat: -32.6531785,
       lng: -70.0108675,
@@ -26,7 +25,6 @@ export const PRODUCTS = [
     pack: "7 días. Comida y alojamiento incluidos",
     country: "Argentina, Chile",
     region: "Puna de Atacama",
-    // quantity: 1,
     coords: {
       lat: -27.1091618,
       lng: -68.5758527,
@@ -44,7 +42,6 @@ export const PRODUCTS = [
     pack: "7 días. Comida y alojamiento incluidos",
     country: "Argentina",
     region: "Puna de Atacama",
-    // quantity: 1,
     coords: {
       lat: -27.7553089,
       lng: -68.8340515,
@@ -62,7 +59,6 @@ export const PRODUCTS = [
     pack: "5 días. Comida y alojamiento incluidos",
     country: "Argentina",
     region: "Andes centrales",
-    // quantity: 1,
     coords: {
       lat: -31.9791662,
       lng: -70.1125,
@@ -80,7 +76,6 @@ export const PRODUCTS = [
     pack: "6 días. Comida y alojamiento incluidos",
     country: "Argentina, Chile",
     region: "Puna de Atacama",
-    // quantity: 1,
     coords: {
       lat: -28.0185951,
       lng: -68.7910194,
@@ -99,7 +94,6 @@ export const PRODUCTS = [
     pack: "5 días. Comida y alojamiento incluidos",
     country: "Argentina",
     region: "Parque Nacional de los Glaciares",
-    // quantity: 1,
     coords: {
       lat: -50.5026183,
       lng: -73.1997344,
@@ -117,7 +111,6 @@ export const PRODUCTS = [
     pack: "3 días. Comida y alojamiento incluidos",
     country: "Argentina",
     region: "Chubut",
-    // quantity: 1,
     coords: {
       lat: -43.5391257,
       lng: -71.4737882,
