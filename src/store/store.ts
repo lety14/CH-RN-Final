@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import placeReducer from "./slices/place.slice";
+import placeReducer from "./slices/places.slice";
 import categoriesReducer from "./slices/categories.slice";
 import productsReducer from "./slices/products.slice";
 import authReducer from "./slices/auth.slice";

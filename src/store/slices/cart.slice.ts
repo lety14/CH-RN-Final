@@ -19,8 +19,8 @@ const initialState: ICart = {
 
 export const confirmCartAsync = createAsyncThunk(
   "cart/addOrder",
-  ({ items, total }: { items: IItem[]; total: number }) => {
-    const result = CartService.confirmCart(items, total);
+  ({ userId, items, total }: { userId: string; items: IItem[]; total: number }) => {
+    const result = CartService.confirmCart(userId, items, total);
     return result;
   }
 );
@@ -70,8 +70,9 @@ const cartSlice = createSlice({
 
 export const { addItem, deleteItem, cleanCart } = cartSlice.actions;
 
-export const confirmCarFromApi = (items: IItem[], total: number) => (dispatch: AppDispatch) => {
-  dispatch(confirmCartAsync({ items, total }));
-};
+export const confirmCarFromApi =
+  (userId: string, items: IItem[], total: number) => (dispatch: AppDispatch) => {
+    dispatch(confirmCartAsync({ userId, items, total }));
+  };
 
 export default cartSlice.reducer;
