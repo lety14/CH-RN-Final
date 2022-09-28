@@ -1,0 +1,7 @@
+{
+    "printWidth": 100,
+    "tabWidth": 2,
+    "signleQuote": false,
+    "bracketSameLine": true,
+    "trailingComma": "es5"
+}
