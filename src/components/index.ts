@@ -7,3 +7,6 @@ export { default as FadeIn } from "./fadeInView";
 export { default as ButtonWithConfirmation } from "./button-with-confirmation";
 export { default as ModalSuccess } from "./containers/modal-success";
 export { default as OrderItem } from "./order-item";
+export { default as LocationSelectorComponent } from "./location-selector";
+export { default as ImageSelectorComponent } from "./image-selector";
+export { default as PlaceItemComponent } from "./place-item";

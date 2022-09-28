@@ -32,7 +32,7 @@ const OrderItem = ({ order, onDelete }: OrderItemProps) => {
         </View>
       </View>
       <TouchableOpacity onPress={() => onDelete(order.id)}>
-        <Ionicons name="trash" size={20} color={colors.primary} />
+        <Ionicons name="trash" size={20} color={colors.secondary} />
       </TouchableOpacity>
     </View>
   );

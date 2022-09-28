@@ -1,4 +1,3 @@
-import { relative } from "path";
 import { StyleSheet } from "react-native";
 import { colors } from "../../constants/colors.constants";
 
@@ -41,18 +40,15 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: "monserrat-bold",
     paddingVertical: 5,
-    // color: colors.white,
   },
   locationDetails: {
     fontSize: 12,
     paddingLeft: 5,
-    // color: colors.white,
     fontFamily: "monserrat-bold",
   },
   price: {
     fontSize: 16,
     fontFamily: "monserrat-regular",
-    // color: colors.white,
   },
   button: {
     paddingVertical: 5,
@@ -65,7 +61,6 @@ export const styles = StyleSheet.create({
   buttonText: {
     fontFamily: "monserrat-regular",
     fontSize: 17,
-    // color: colors.white,
   },
   infoSeeMore: {
     flexDirection: "row",

@@ -3,8 +3,8 @@ import { colors } from "../../constants/colors.constants";
 
 export const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.primary,
-    padding: 6,
+    padding: 8,
+    borderRadius: 5,
     width: "100%",
   },
   buttonText: {

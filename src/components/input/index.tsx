@@ -1,14 +1,16 @@
-import React, { FC } from "react";
-import { View, Text, TextInput, TextInputProps } from "react-native";
+import React, { FC, useState } from "react";
+import { View, Text, TextInput, TextInputProps, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { colors } from "../../constants/colors.constants";
 
 type InputProps = {
-  hasError:boolean,
-  error:boolean,
-  touched: boolean,
-}
+  hasError: boolean;
+  error: boolean;
+  touched: boolean;
+};
 
-const Input:FC<TextInputProps & InputProps> = ({
+const Input: FC<TextInputProps & InputProps> = ({
   editable,
   value = "",
   onChangeText,
@@ -21,24 +23,39 @@ const Input:FC<TextInputProps & InputProps> = ({
   hasError,
   error,
   touched,
+  secureTextEntry,
 }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <View style={styles.container}>
-        <TextInput      
-          style={styles.input}
-          editable={editable}
-          value={value}
-          onChangeText={onChangeText}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          maxLength={maxLength}
-          placeholder={placeholder}
-          placeholderTextColor={placeholderTextColor}
-          keyboardType={keyboardType}
-        />
+      <TextInput
+        style={styles.input}
+        editable={editable}
+        value={value}
+        onChangeText={onChangeText}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        secureTextEntry={!showPassword}
+        maxLength={maxLength}
+        placeholder={placeholder}
+        placeholderTextColor={placeholderTextColor}
+        keyboardType={keyboardType}
+      />
       {hasError && touched && (
-        <View style={styles.message}>
+        <View>
           <Text style={styles.helperText}>{error}</Text>
+        </View>
+      )}
+      {secureTextEntry && (
+        <View style={styles.password}>
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+            <Ionicons
+              name={showPassword ? "eye-off-outline" : "eye-outline"}
+              size={20}
+              color={colors.black}
+            />
+          </TouchableOpacity>
         </View>
       )}
     </View>

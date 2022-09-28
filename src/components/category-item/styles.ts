@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: colors.white,
     margin: 10,
-    //
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -44,7 +43,7 @@ export const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "flex-start",
     textAlign: "left",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     paddingLeft: 15,
   },
 });

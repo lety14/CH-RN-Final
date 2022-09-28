@@ -16,10 +16,10 @@ const CartItem = ({ item, onDelete }: CartItemProps) => {
       <View>
         <Text style={styles.header}>{item.title}</Text>
         <Text style={styles.detailQty}>Cant: {item.quantity}</Text>
-        <Text style={styles.detailPrice}>Subtotal: $ {item.price}</Text>
+        <Text style={styles.detailPrice}>Precio: $ {item.price}</Text>
       </View>
       <TouchableOpacity onPress={() => onDelete(item.id)}>
-        <IoniIcons name="trash" size={20} color={colors.primary} />
+        <IoniIcons name="trash" size={20} color={colors.secondary} />
       </TouchableOpacity>
     </View>
   );
