@@ -1,13 +1,19 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import placeReducer from "./place.slice";
-import categoriesReducer from "./categories.slice";
-import productsReducer from "./products.slice";
+import placeReducer from "./slices/place.slice";
+import categoriesReducer from "./slices/categories.slice";
+import productsReducer from "./slices/products.slice";
+import authReducer from "./slices/auth.slice";
+import cartReducer from "./slices/cart.slice";
+import ordersReducer from "./slices/order.slice";
 
 export const store = configureStore({
   reducer: {
     places: placeReducer,
     categories: categoriesReducer,
     products: productsReducer,
+    auth: authReducer,
+    cart: cartReducer,
+    orders: ordersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import ICategory from "../types/ICategory.type";
-import { CATEGORIES } from "../constants/data/categories.constants";
+import ICategory from "../../types/ICategory.type";
+import { CATEGORIES } from "../../constants/data/categories.constants";
 
 interface ICategories {
   categories: ICategory[];

@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import IPlace from "../types/IPlace.type";
- import { getPlaces, insertPlace } from "../db";
- import { URL_GEOCODING } from "../utils/maps";
-import { AppDispatch } from "./store";
-import { ILocation } from "../types/ICoords.type";
-import Place from "../db/models/place";
+import IPlace from "../../types/IPlace.type";
+ import { getPlaces, insertPlace } from "../../db";
+ import { URL_GEOCODING } from "../../utils/maps";
+import { AppDispatch } from "../store";
+import { ILocation } from "../../types/ICoords.type";
+import Place from "../../db/models/place";
 
 interface IPlaces {
   places: IPlace[];
