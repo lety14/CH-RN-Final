@@ -34,7 +34,7 @@ const UserProfileNavigator = () => {
           title: "Mis reseñas",
           headerRight: () => (
             <TouchableOpacity onPress={() => navigation.navigate("NewPlaces")}>
-              <Ionicons name="add-circle-outline" size={38} color={colors.primary} />
+              <Ionicons name="add-circle-outline" size={38} color={colors.secondary} />
             </TouchableOpacity>
           ),
         })}

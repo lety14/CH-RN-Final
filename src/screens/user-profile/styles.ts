@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     shadowColor: "#000",
     width: 100,
     position: "absolute",
-    top: 50,
+    top: 20,
     right: 20,
     zIndex: 10,
     shadowOffset: {

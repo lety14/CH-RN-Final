@@ -59,9 +59,7 @@ export const styles = StyleSheet.create({
     paddingTop: 8,
   },
   sectionBuy: {
-    marginBottom: -20,
-    paddingTop: 15,
-    paddingHorizontal: 20,
+    padding: 10,
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",

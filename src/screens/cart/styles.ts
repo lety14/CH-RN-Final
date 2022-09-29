@@ -50,6 +50,7 @@ export const styles = StyleSheet.create({
     borderTopColor: colors.black,
     borderTopWidth: 1,
     paddingVertical: 3,
+    marginBottom: 15,
   },
   resume: {
     flexDirection: "row",
